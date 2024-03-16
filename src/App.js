@@ -1,23 +1,70 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import QRCode from "react-qr-code";
+
 
 function App() {
+  const [qrValue, setQrValue] = React.useState('')
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='bg-animete'>
+        <div class="glowing">
+
+          <span ></span>
+
+          <span ></span>
+
+          <span ></span>
+
+        </div>
+
+        <div class="glowing">
+
+          <span ></span>
+
+          <span ></span>
+
+          <span ></span>
+
+        </div>
+
+        <div class="glowing">
+
+          <span ></span>
+
+          <span ></span>
+
+          <span ></span>
+
+        </div>
+
+        <div class="glowing">
+
+          <span ></span>
+
+          <span ></span>
+
+          <span ></span>
+
+        </div>
+      </div>
+
+      <div className='main-block'>
+        <h1>
+          Ладно вставь свой qr-code сделаю тебе бисмиля
+        </h1>
+        <input
+          type="text"
+          name="text"
+          onChange={e => setQrValue(e.target.value)}
+          value={qrValue}
+          class="input"
+          placeholder="Сюда вставвь дара лабан"
+        /> <br />
+
+        <QRCode value={qrValue} />
+      </div>
+
     </div>
   );
 }
